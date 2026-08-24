@@ -1,1 +1,36 @@
-<p>task-cards-component works!</p>
+<div class="task-card" [ngClass]="{
+  'borda-verde': tarefa.prioridade === 'Baixa',
+  'borda-amarela': tarefa.prioridade === 'Média',
+  'borda-vermelha': tarefa.prioridade === 'Alta'
+}">
+
+  <h3>{{ tarefa.titulo }}</h3>
+
+  <h2>
+    {{ tarefa.responsavel }}<br>
+    {{ tarefa.descricao }}<br>
+    <span [ngClass]="{
+      'txt-verde': tarefa.prioridade === 'Baixa',
+      'txt-amarelo': tarefa.prioridade === 'Média',
+      'txt-vermelho': tarefa.prioridade === 'Alta'
+    }">
+      DATA ENTREGA TAREFA {{ tarefa.data }}<br>
+      {{ tarefa.prioridade.toUpperCase() }}
+    </span>
+  </h2>
+
+  <div class="card-actions">
+    @if (tarefa.status !== 'Pendente') {
+      <a (click)="alterar('Pendente')">Reabrir</a>
+    }
+    @if (tarefa.status !== 'Em andamento') {
+      <a (click)="alterar('Em andamento')">Em Andamento</a>
+    }
+    @if (tarefa.status !== 'Concluída') {
+      <a (click)="alterar('Concluída')">Concluir</a>
+    }
+  </div>
+
+  <a class="btn-remover" (click)="remover()">Remover</a>
+
+</div>

@@ -1,0 +1,194 @@
+/* --- ESTILO GERAL DO COMPONENTE --- */
+:host {
+  display: block;
+  background-color: #f7f5f2; /* Fundo levemente off-white/bege suave, bem aconchegante */
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#gerenciador {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titulo {
+  text-align: center;
+  color: #1e3a4c;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* --- BLOCO PRINCIPAL (FORMULÁRIO) --- */
+#formulario {
+  background: #1e3a4c; /* Tom de azul mais profundo e elegante */
+  padding: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 12px 30px rgba(30, 58, 76, 0.15);
+}
+
+#form-tarefa {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 700px;
+}
+
+#form-tarefa label {
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+#form-tarefa input[type="text"],
+#form-tarefa input[type="date"],
+#form-tarefa textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #ffffff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+#form-tarefa input:focus,
+#form-tarefa textarea:focus {
+  border-color: #f472b6; /* Detalhe em tom delicado de rosa/magenta nos campos ao focar */
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(244, 114, 182, 0.15);
+}
+
+/* Rádios de prioridade */
+.radio-group {
+  display: flex;
+  gap: 25px;
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+#btnAdd {
+  background-color: #ffffff;
+  color: #1e3a4c;
+  border: none;
+  padding: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#btnAdd:hover {
+  background-color: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Mini Cards Laterais (Status) */
+#listaStatus {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 180px;
+}
+
+.mini-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 16px 12px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* --- CARDS DE PRIORIDADE DO TOPO --- */
+#prioridade {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.p-card {
+  flex: 1;
+  padding: 18px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  letter-spacing: 0.5px;
+}
+
+.bg-verde { background-color: #38b000; }
+.bg-amarelo { background-color: #ffb703; color: #1e293b; }
+.bg-vermelho { background-color: #d90429; }
+
+/* --- PAINEL KANBAN (COLUNAS LADO A LADO) --- */
+#kaban {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+}
+
+.coluna {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 22px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+}
+
+.coluna h2 {
+  font-size: 1.15rem;
+  color: #1e3a4c;
+  text-align: center;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 2px solid #f1f5f9;
+  margin-bottom: 20px;
+}
+
+.cards-lista {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-height: 200px;
+}

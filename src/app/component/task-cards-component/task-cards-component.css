@@ -1,0 +1,57 @@
+.task-card {
+  background-color: var(--cor-fundo-card);
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 6px solid #ccc;
+}
+
+.borda-verde { border-left-color: var(--cor-verde); }
+.borda-amarela { border-left-color: var(--cor-amarelo); }
+.borda-vermelha { border-left-color: var(--cor-vermelho); }
+
+.task-card h3 {
+  font-size: 1.05rem;
+  color: var(--cor-primaria);
+  margin: 0;
+}
+
+.task-card h2 {
+  font-size: 0.85rem;
+  color: var(--cor-texto-principal);
+  font-weight: normal;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.txt-verde { color: var(--cor-verde); font-weight: bold; }
+.txt-amarelo { color: #d39e00; font-weight: bold; }
+.txt-vermelho { color: var(--cor-vermelho); font-weight: bold; }
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+.card-actions a, .btn-remover {
+  color: var(--cor-primaria);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-actions a:hover, .btn-remover:hover {
+  text-decoration: underline;
+}
+
+.btn-remover {
+  text-align: center;
+  color: var(--cor-vermelho);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}

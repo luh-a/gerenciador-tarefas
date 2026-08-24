@@ -1,1 +1,83 @@
-<p>lista-tarefas works!</p>
+<div id="gerenciador">
+  <h1 class="titulo"> Gerenciador de Tarefas </h1>
+
+  <div id="formulario">
+    <form id="form-tarefa" (submit)="adicionarTarefa()">
+      <label> Tarefa </label>
+      <input type="text" [(ngModel)]="titulo" name="titulo" required/>
+
+      <label> Responsável </label>
+      <input type="text" [(ngModel)]="responsavel" name="responsavel" required/>
+
+      <label> Descrição </label>
+      <textarea [(ngModel)]="descricao" name="descricao" rows="3" required></textarea>
+
+      <label> Prioridade </label>
+      <div class="radio-group">
+        <label><input type="radio" [(ngModel)]="prioridade" name="prioridade" value="Baixa" required> Baixa</label>
+        <label><input type="radio" [(ngModel)]="prioridade" name="prioridade" value="Média" required> Média</label>
+        <label><input type="radio" [(ngModel)]="prioridade" name="prioridade" value="Alta" required> Alta</label>
+      </div>
+
+      <label> Data </label>
+      <input type="date" [(ngModel)]="data" name="data" required/>
+
+      <button type="submit" id="btnAdd"> Adicionar Tarefa </button>
+    </form>
+
+    <div id="listaStatus">
+      <div class="mini-card"> Aberto {{ totalAberto }} </div>
+      <div class="mini-card"> Em Andamento {{ totalAndamento }} </div>
+      <div class="mini-card"> Concluída {{ totalConcluida }} </div>
+    </div>
+  </div>
+
+  <!-- Cards de contagem do topo (Baixa, Média, Alta) -->
+  <div id="prioridade">
+    <div class="p-card bg-verde"> Baixa {{ totalBaixa }} </div>
+    <div class="p-card bg-amarelo"> Média {{ totalMedia }} </div>
+    <div class="p-card bg-vermelho"> Alta {{ totalAlta }} </div>
+  </div>
+
+  <!-- Painel Kanban com as colunas lado a lado corretamente -->
+  <div id="kaban">
+
+    <div class="coluna">
+      <h2> Aberto </h2>
+      <hr class="divider">
+      <div class="cards-lista">
+        @for (t of listaTarefas; track t.id) {
+          @if (t.status === 'Pendente') {
+            <app-task-cards [tarefa]="t" (mudarStatus)="atualizarStatus($event)" (deletar)="removerTarefa($event)"></app-task-cards>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="coluna">
+      <h2> Em Andamento </h2>
+      <hr class="divider">
+      <div class="cards-lista">
+        @for (t of listaTarefas; track t.id) {
+          @if (t.status === 'Em andamento') {
+            <app-task-cards [tarefa]="t" (mudarStatus)="atualizarStatus($event)" (deletar)="removerTarefa($event)"></app-task-cards>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="coluna">
+      <h2> Concluída </h2>
+      <hr class="divider">
+      <div class="cards-lista">
+        @for (t of listaTarefas; track t.id) {
+          @if (t.status === 'Concluída') {
+            <app-task-cards [tarefa]="t" (mudarStatus)="atualizarStatus($event)" (deletar)="removerTarefa($event)"></app-task-cards>
+          }
+        }
+      </div>
+    </div>
+
+  </div>
+
+</div>
