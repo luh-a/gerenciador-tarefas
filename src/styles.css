@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/*geral*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cor-primaria: #052945;
+  --cor-fundo-geral: #f0f4f8;
+  --cor-fundo-card: #ffffff;
+  --cor-texto-principal: #333333;
+  --cor-verde: #4caf50;
+  --cor-amarelo: #ffc107;
+  --cor-vermelho: #f44336;
+}
